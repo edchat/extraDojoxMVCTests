@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>Test template with Repeat using different exprchars.</title>
+		<script src="../../../../dojo/dojo.js" type="text/javascript" data-dojo-config="parseOnLoad: 0, isDebug: 1">
+		</script>
+		<style type="text/css">
+			@import "../css/app-format.css";
+			@import "../../../../dijit/themes/claro/claro.css";
+		</style>
+		<script type="text/javascript">
+			require([
+				"dojo/parser",
+				"dojox/mvc/getStateful",
+				'dojox/mvc/EditModelRefController',
+				"dojox/mvc/tests/test_templatedWidget2/myMvcTemplated",
+				"dojo/domReady!"
+			], function(parser, getStateful, EditModelRefController, myMvcTemplated){
+			// Initial data
+			var fields = {
+				"field1" : {
+					"value" : "field1",
+					"required" : true,
+					"disabled" : false,
+					"readOnly" : false
+				},
+				"field2" : {
+					"value" : "field2",
+					"required" : false,
+					"disabled" : true,
+					"readOnly" : false
+				},
+				"field3" : {
+					"value" : "field3",
+					"required" : false,
+					"disabled" : false,
+					"readOnly" : true
+				}
+			};
+				ctrl = new EditModelRefController({sourceModel: getStateful(fields), holdModelUntilCommit: true});
+
+				parser.parse();
+			});
+		</script>
+	</head>
+	<body class="claro" style="background-image: url(../images/master_detail.png)">
+		<div id="wrapper">
+			<div id="main">
+				<div id="leftNav"></div>
+				<div id="mainContent">
+					<div>
+						Test exprchar. Widget template test uses exprchar of # and others for template:#{this.index} etc.
+					</div>
+					<br/>
+					<div id="container2" data-dojo-type="dojox.mvc.tests.test_templatedWidget2.myMvcTemplated" data-dojo-props="ctrl: ctrl"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

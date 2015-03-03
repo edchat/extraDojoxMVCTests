@@ -1,0 +1,105 @@
+<div>
+	<div id="wrapper">
+		<div id="header">
+				<h1>Test nested field data, (value, required, readOnly, and disabled) using EditModelRefController.</h1>
+		</div>
+		<div class="fullrow" data-dojo-type="dojox/mvc/Group" data-dojo-props="target: at(ctrl,'model')">
+			<div data-dojo-type="dojox/mvc/Group"
+								data-dojo-props="target: at('rel:', 'field1')">
+				<div>
+					<label class="cell" for="field1Input">Field1:</label>
+					<input class="cell" id="field1Input" data-dojo-type="dijit/form/ValidationTextBox"
+								data-dojo-props="value: at('rel:', 'value'),
+												readOnly: at('rel:', 'readOnly'),
+												required: at('rel:', 'required'),
+												disabled: at('rel:', 'disabled')">
+					<button type="button" data-dojo-type="dijit/form/Button"
+							data-dojo-attach-event="onClick: toggleField1Required">Toggle required</button>
+					<button type="button" data-dojo-type="dijit/form/Button"
+							data-dojo-attach-event="onClick: toggleField1Disabled">Toggle disabled</button>
+					<button type="button" data-dojo-type="dijit/form/Button"
+							data-dojo-attach-event="onClick: toggleField1ReadOnly">Toggle readOnly</button>
+					<br/>
+					(Field1: value:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'value')"></span>)
+					(required:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'required')"></span>)
+					(disabled:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'disabled')"></span>)
+					(readOnly:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'readOnly')"></span>)
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<div data-dojo-type="dojox/mvc/Group"
+								data-dojo-props="target: at('rel:', 'field2')">
+				<div>
+					<label class="cell" for="field2Input">Field2:</label>
+					<input class="cell" id="field2Input" data-dojo-type="dijit/form/ValidationTextBox"
+								data-dojo-props="value: at('rel:', 'value'),
+												readOnly: at('rel:', 'readOnly'),
+												required: at('rel:', 'required'),
+												disabled: at('rel:', 'disabled')">
+					<button type="button" data-dojo-type="dijit/form/Button"
+						data-dojo-props="onClick: function(){
+							ctrl.get('field2').set('required',!ctrl.get('field2').get('required'));}">Toggle required</button>
+					<button type="button" data-dojo-type="dijit/form/Button"
+							data-dojo-props="onClick: function(){
+							ctrl.get('field2').set('disabled',!ctrl.get('field2').get('disabled'));}">Toggle disabled</button>
+					<button type="button" data-dojo-type="dijit/form/Button"
+						data-dojo-props="onClick: function(){
+						ctrl.get('field2').set('readOnly',!ctrl.get('field2').get('readOnly'));}">Toggle readOnly</button>
+					<br/>
+					(Field1: value:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'value')"></span>)
+					(required:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'required')"></span>)
+					(disabled:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'disabled')"></span>)
+					(readOnly:<span data-dojo-type="dojox/mvc/Output"
+					                      data-dojo-props="value: at('rel:', 'readOnly')"></span>)
+					<br/>
+					<br/>
+				</div>
+			</div>
+			<div data-dojo-type="dojox/mvc/Group"
+								data-dojo-props="target: at('rel:', 'field3')">
+				<div>
+					<label class="cell" for="field3Input">Field3:</label>
+					<input class="cell" id="field3Input" data-dojo-type="dijit/form/ValidationTextBox"
+								data-dojo-props="value: at('rel:', 'value'),
+												readOnly: at('rel:', 'readOnly'),
+												required: at('rel:', 'required'),
+												disabled: at('rel:', 'disabled')">
+					<button type="button" data-dojo-type="dijit/form/Button"
+						data-dojo-props="onClick: function(){
+							ctrl.get('field3').set('required',!ctrl.get('field3').get('required'));}">Toggle required</button>
+					<button type="button" data-dojo-type="dijit/form/Button"
+							data-dojo-props="onClick: function(){
+							ctrl.get('field3').set('disabled',!ctrl.get('field3').get('disabled'));}">Toggle disabled</button>
+					<button type="button" data-dojo-type="dijit/form/Button"
+						data-dojo-props="onClick: function(){
+						ctrl.get('field3').set('readOnly',!ctrl.get('field3').get('readOnly'));}">Toggle readOnly</button>
+					<br/>
+					(Field1: value:<span data-dojo-type="dojox/mvc/Output"
+										  data-dojo-props="value: at('rel:', 'value')"></span>)
+					(required:<span data-dojo-type="dojox/mvc/Output"
+										  data-dojo-props="value: at('rel:', 'required')"></span>)
+					(disabled:<span data-dojo-type="dojox/mvc/Output"
+										  data-dojo-props="value: at('rel:', 'disabled')"></span>)
+					(readOnly:<span data-dojo-type="dojox/mvc/Output"
+										  data-dojo-props="value: at('rel:', 'readOnly')"></span>)
+					<br/>
+					<br/>
+				</div>
+			</div>
+		</div>
+		<div>
+			<button  class="buttoncell" id="reset" type="button" data-dojo-type="dijit/form/Button"  data-dojo-props="onClick: function(){ ctrl.reset(); }">Reset</button>
+			<button  class="buttoncell" id="commit" type="button" data-dojo-type="dijit/form/Button"  data-dojo-props="onClick: function(){ ctrl.commit(); }">Save</button>
+		</div>
+
+	</div>
+
+</div>
